@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080912"><meta name="description" content="A birthday surprise made with love for Anjana.">
+<title>Anjana — My Favourite Story</title>
+<style>
+:root{--gold:#f2d29a;--rose:#efaabd;--ink:#080912;--muted:#c9c2d1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:#fff9f1;font-family:Georgia,serif}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 12% 15%,#48243e 0,transparent 40%),radial-gradient(ellipse at 88% 70%,#1c2c48 0,transparent 42%),#080912}
+button{font:inherit;cursor:pointer}.wrap{width:min(1080px,92%);margin:auto}.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:70px 18px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:min(80vw,680px);height:min(80vw,680px);border:1px solid #f2d29a20;border-radius:50%;box-shadow:0 0 0 35px #f2d29a08,0 0 0 70px #f2d29a05}
+.hero-inner{z-index:1}.eyebrow{font: .7rem Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(4rem,15vw,9rem);font-weight:400;letter-spacing:-.06em;line-height:.85;margin:28px 0 20px;background:linear-gradient(120deg,#fff,#f2d29a 50%,#efaabd);color:transparent;background-clip:text}
+.subtitle{font:300 clamp(1rem,3vw,1.3rem)/1.7 Arial,sans-serif;color:#e5dce9;letter-spacing:.04em}.rule{height:1px;width:90px;background:var(--gold);margin:26px auto}
+.btn{border:0;border-radius:99px;padding:14px 23px;background:linear-gradient(110deg,var(--gold),var(--rose));color:#251824;font:700 .78rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 8px 30px #efaabd25;transition:.2s}.btn:hover{transform:translateY(-3px)}
+.ghost{background:transparent;border:1px solid #f2d29a88;color:var(--gold);padding:10px 16px;border-radius:30px;font: .78rem Arial,sans-serif}
+.scroll{position:absolute;bottom:25px;color:#bcb2c6;font: .65rem Arial,sans-serif;letter-spacing:.2em}
+section{padding:82px 0}.head{text-align:center;margin-bottom:34px}.head h2{font-size:clamp(2.2rem,7vw,4rem);font-weight:400;margin:12px 0;color:#fff0dd}.head p{font: .98rem/1.7 Arial,sans-serif;color:var(--muted);max-width:650px;margin:auto}
+.panel{background:linear-gradient(145deg,#ffffff10,#ffffff04);border:1px solid #ffffff20;border-radius:24px;padding:clamp(20px,4vw,36px);box-shadow:0 20px 70px #0005;backdrop-filter:blur(12px)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.photo{min-height:210px;border-radius:18px;overflow:hidden;position:relative;background:linear-gradient(145deg,#5b3450,#1a253e);display:grid;place-items:center;border:1px solid #ffffff20}.photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}.photo span{position:relative;z-index:1;color:#fff;font: .8rem Arial,sans-serif;text-shadow:0 2px 10px #000}.photo:has(img[src]) span{display:none}
+.controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px}.music{display:flex;align-items:center;gap:18px;justify-content:center;flex-wrap:wrap;text-align:left}.disc{width:72px;height:72px;border-radius:50%;background:radial-gradient(circle,#f5dcae 0 8%,#171323 9% 30%,#b9788f 31% 33%,#171323 34%);box-shadow:0 0 25px #efaabd30;animation:spin 8s linear infinite;animation-play-state:paused}.disc.playing{animation-play-state:running}@keyframes spin{to{transform:rotate(360deg)}}
+.music-title{font:1rem Arial,sans-serif}.music-title small{display:block;color:var(--muted);margin-top:6px;font-size:.78rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.surprise{min-height:185px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}.emoji{font-size:2rem}.surprise h3{font-size:1.35rem;font-weight:400;margin:8px 0}.surprise p{font: .87rem/1.55 Arial,sans-serif;color:var(--muted);margin:0}.reveal{display:none;margin-top:14px;padding:14px;border-left:2px solid var(--rose);background:#efaabd10;font: .95rem/1.65 Arial,sans-serif;color:#f8e6ee}.reveal.show{display:block;animation:fade .4s}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.moment{text-align:center}.moment b{display:block;color:var(--gold);font-size:1.1rem;font-weight:400;margin-bottom:10px}.moment p{font: .9rem/1.6 Arial,sans-serif;color:var(--muted);margin:0}
+.letter{max-width:760px;margin:auto;font:1rem/1.95 Arial,sans-serif;color:#eee4ec}.letter .salute{font:italic 2rem Georgia;color:var(--gold)}.signature{font:italic 1.7rem Georgia;color:var(--rose);margin-top:24px}
+.quiz{text-align:center}.q{font-size:clamp(1.25rem,4vw,1.65rem);line-height:1.55;margin:18px auto 22px;max-width:760px}.answer-row{display:flex;gap:10px;max-width:650px;margin:0 auto;flex-wrap:wrap;justify-content:center}.answer-input{flex:1 1 260px;min-width:0;background:#ffffff0b;border:1px solid #ffffff45;border-radius:30px;padding:15px 18px;color:#fff;font:1rem Arial,sans-serif;outline:none}.answer-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #f2d29a18}.answer-input::placeholder{color:#a99fb1}.quiz-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}.feedback{min-height:48px;margin:18px auto 0;color:var(--gold);font: .92rem/1.6 Arial,sans-serif;max-width:680px}.quiz-meta{display:flex;justify-content:space-between;gap:12px;max-width:650px;margin:0 auto;color:#c9c2d1;font: .78rem Arial,sans-serif}.progress{height:5px;background:#ffffff18;border-radius:9px;max-width:650px;margin:12px auto 22px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--rose));transition:width .3s}.quiz-note{font: .78rem/1.5 Arial,sans-serif;color:#a99fb1;margin-top:16px}
+.cake{text-align:center}.cake-art{font-size:clamp(5rem,17vw,9rem);margin:12px}.wish{color:var(--gold);min-height:30px;font:1rem Arial,sans-serif;margin-top:18px}
+.footer{text-align:center;padding:50px 15px 35px;color:#a99fb1;font: .75rem Arial,sans-serif;letter-spacing:.1em}.heart{color:var(--rose);border:0;background:none;font-size:1.5rem;vertical-align:middle;padding:3px 8px}
+.modal{position:fixed;inset:0;z-index:20;background:#05050bee;display:none;place-items:center;padding:20px}.modal.open{display:grid}.modalbox{max-width:520px;text-align:center}.modalbox h2{font-size:2.2rem;font-weight:400;color:var(--gold)}.modalbox p{font:1rem/1.7 Arial,sans-serif;color:#e8dce9}
+@media(max-width:760px){.gallery,.grid3,.timeline{grid-template-columns:1fr}.photo{min-height:250px}.surprise{min-height:0}section{padding:65px 0}.hero{min-height:94svh}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="hero-inner"><div class="eyebrow">A little universe made just for you</div><div class="rule"></div>
+ <h1>Anjana</h1><p class="subtitle">Every great story has a favourite chapter.<br>Mine is every chapter with you.</p><div class="rule"></div>
+ <button class="btn" onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">Begin our story ✦</button></div>
+ <div class="scroll">A birthday story · scroll to explore</div>
+</header>
+<main>
+<section id="memories"><div class="wrap"><div class="head"><div class="eyebrow">Chapter one · the memories</div><h2>Our little moments</h2><p>Add your favourite photographs here. These can be wedding memories, silly selfies, family moments or places you've explored together.</p></div>
+ <div class="gallery">
+  <div class="photo"><span>Our favourite photo 01</span><img src="assets/photo-1.jpg" alt="Our memory 1" onerror="this.remove()"></div>
+  <div class="photo"><span>Our favourite photo 02</span><img src="assets/photo-2.jpg" alt="Our memory 2" onerror="this.remove()"></div>
+  <div class="photo"><span>Our favourite photo 03</span><img src="assets/photo-3.jpg" alt="Our memory 3" onerror="this.remove()"></div>
+ </div>
+ <div class="controls"><label class="ghost" for="photoPicker">Preview photos from this device</label><input id="photoPicker" type="file" accept="image/*" multiple hidden></div>
+</div></section>
+<section><div class="wrap"><div class="head"><div class="eyebrow">A song for you · chapter two</div><h2>Press play, think of us</h2><p>Add a song that means something to both of you. Music starts only when you press play.</p></div>
+ <div class="panel music"><div class="disc" id="disc"></div><div class="music-title">Our special song<small>Replace <code>assets/our-song.mp3</code> with your chosen audio file</small></div><button class="btn" id="musicBtn" onclick="toggleMusic()">▶ Play our song</button><audio id="song" preload="none" src="assets/our-song.mp3"></audio></div>
+</div></section>
+<section><div class="wrap"><div class="head"><div class="eyebrow">Chapter three · little surprises</div><h2>Three things I want you to remember</h2><p>Tap to reveal. Keep these close, today and always.</p></div>
+<div class="grid3">
+ <article class="panel surprise"><div><div class="emoji">💌</div><h3>A note from my heart</h3><p>A little reminder, just for you.</p></div><div><button class="ghost" onclick="reveal('r1')">Open note</button><div class="reveal" id="r1">Anjana, life is warmer, brighter and more meaningful with you in it. I would choose you, in every version of this life. ❤️</div></div></article>
+ <article class="panel surprise"><div><div class="emoji">✨</div><h3>My favourite place</h3><p>It isn't a place on a map.</p></div><div><button class="ghost" onclick="reveal('r2')">Find out</button><div class="reveal" id="r2">My favourite place is wherever I get to share a moment with you.</div></div></article>
+ <article class="panel surprise"><div><div class="emoji">🌷</div><h3>Your superpower</h3><p>Something only you can do.</p></div><div><button class="ghost" onclick="reveal('r3')">Discover it</button><div class="reveal" id="r3">You make ordinary days feel special. That is a rare kind of magic — and it is yours.</div></div></article>
+</div></div></section>
+<section><div class="wrap"><div class="head"><div class="eyebrow">Chapter four · the story so far</div><h2>Little chapters, endless love</h2><p>You can personalise these captions with dates or milestones that mean something to you both.</p></div>
+<div class="panel timeline"><div class="moment"><b>Where it began</b><p>One meeting, one hello, and a story that became ours.</p></div><div class="moment"><b>A day to remember</b><p>A promise, a celebration, and the beginning of forever.</p></div><div class="moment"><b>Still choosing you</b><p>More laughter, more memories, and so many chapters ahead.</p></div></div>
+</div></section>
+<section id="memory-challenge"><div class="wrap"><div class="head"><div class="eyebrow">Chapter five · our little challenge</div><h2>How well do you remember?</h2><p>Seven clues from stories we know. Type the title you think I'm looking for. You get three chances for every question!</p></div><div class="panel quiz">
+<div class="quiz-meta"><span id="count">Question 1 of 7</span><span id="score">Correct: 0</span></div>
+<div class="progress"><span id="progressBar"></span></div>
+<div class="q" id="question" aria-live="polite"></div>
+<form id="answerForm" class="answer-row">
+<input class="answer-input" id="answerInput" type="text" autocomplete="off" placeholder="Type your answer here…" aria-label="Type your answer" required>
+<button class="btn" id="submitAnswer" type="submit">Submit answer</button>
+</form>
+<div class="feedback" id="feedback" aria-live="polite">Take your time. Our memories are worth remembering. ❤️</div>
+<div class="quiz-actions"><button class="ghost" id="next" type="button" style="display:none">Next clue →</button><button class="ghost" id="restartQuiz" type="button" style="display:none">Play again ↻</button></div>
+<div class="quiz-note">Three chances per clue · Answers are not case-sensitive · Punctuation and extra spaces don't matter.</div>
+</div></div></section>
+<section><div class="wrap"><div class="head"><div class="eyebrow">A letter · just for Anjana</div><h2>From me to you</h2></div><div class="panel letter"><div class="salute">My dear Anjana,</div>
+<p>On your birthday, I don't just want to wish you another year of happiness. I want to thank you for all the little ways you make life beautiful — the smiles, the conversations, the patience, the laughter and the memories we keep creating.</p>
+<p>I hope this year brings you beautiful surprises, peaceful moments, exciting adventures and everything your heart has been quietly wishing for.</p>
+<p>Whenever life gets busy, remember this: you are loved, you are appreciated, and you make my world a better place.</p>
+<p>Happy Birthday, Anjana. Here's to many more chapters together.</p><div class="signature">Always yours. ❤️</div></div></div></section>
+<section><div class="wrap"><div class="head"><div class="eyebrow">The final chapter · make a wish</div><h2>One wish, just for you</h2><p>Take a breath, make a wish, and tap when you're ready.</p></div><div class="panel cake"><div class="cake-art" id="cake">🎂</div><button class="btn" onclick="makeWish()">I've made my wish ✨</button><div class="wish" id="wish"></div></div></div></section>
+</main>
+<footer class="footer">MADE WITH <button class="heart" aria-label="Open a secret message" onclick="secret()">♥</button> FOR ANJANA · HAPPY BIRTHDAY</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="panel modalbox"><div style="font-size:3rem">🎉💖✨</div><h2 id="modalTitle">Happy Birthday, Anjana!</h2><p id="modalText">May your days be full of laughter, your heart full of peace, and your dreams full of possibility. You deserve all the beautiful things in the world.</p><button class="btn" onclick="closeModal()">Keep smiling ❤️</button></div></div>
+<script>
+function reveal(id){document.getElementById(id).classList.toggle('show')}
+const picker=document.getElementById('photoPicker');picker.addEventListener('change',e=>{const files=[...e.target.files].slice(0,3);document.querySelectorAll('.photo').forEach((box,i)=>{const old=box.querySelector('img');if(old)old.remove();if(files[i]){const img=document.createElement('img');img.alt='Selected memory';img.src=URL.createObjectURL(files[i]);box.appendChild(img)}})});
+const audio=document.getElementById('song'),disc=document.getElementById('disc'),musicBtn=document.getElementById('musicBtn');
+function toggleMusic(){if(audio.paused){audio.play().then(()=>{musicBtn.textContent='Ⅱ Pause song';disc.classList.add('playing')}).catch(()=>alert('Add your song as assets/our-song.mp3 in GitHub, then try again.'))}else{audio.pause();musicBtn.textContent='▶ Play our song';disc.classList.remove('playing')}}
+audio.addEventListener('ended',()=>{musicBtn.textContent='▶ Play our song';disc.classList.remove('playing')});
+// Text-answer memory challenge: edit the question, accepted answers and feedback here.
+const questions=[
+ {q:'An army officer, a city hiding a sleeper-cell network, and a mission that keeps everyone guessing. And then comes the line: “I’m waiting for your answer!” What title am I thinking of?',answers:['Thuppakki','Thupakki','Thuppaki'],good:'Correct! You remembered that one. ❤️'},
+ {q:'Two men with the same face, one escaping custody and the other standing up for farmers. A powerful fight begins when their paths cross. What title connects them?',answers:['Kaththi','Kathi'],good:'Exactly! Two identities, one unforgettable story. ✨'},
+ {q:'A young man decides that an unusual name will never define his future. He turns every step into a race towards his dream. What title fits this clue?',answers:['Ethir Neechal','Ethirneechal','Ethir Nechal'],good:'You got it! Never stop chasing those dreams. 💛'},
+ {q:'A people’s leader steps into the spotlight, carrying the hopes of the crowd. This is the title of a much-awaited chapter. What is it?',answers:['Jana Nayagan','Jananayagan','Jana Nayagan'],good:'Yes! You found the title. ❤️'},
+ {q:'He travels all the way from abroad just to cast one vote. When that single vote is stolen, he takes on an entire political system. Name the title.',answers:['Sarkar'],good:'Brilliant! One vote, one big change. 🔥'},
+ {q:'A former special agent, a dangerous past, a family connection, and a younger version of himself. Which three-letter title completes the clue?',answers:['GOAT','The Greatest of All Time','Greatest of All Time'],good:'Super! You cracked that clue. 🐐'},
+ {q:'A magician, a doctor, and a man fighting for patients’ rights — three shades, one star. Which title brings these clues together?',answers:['Mersal'],good:'Absolutely right! That was a magical answer. 💖'}
+];
+let qi=0,attempts=0,score=0,questionLocked=false;
+const answerForm=document.getElementById('answerForm');
+const answerInput=document.getElementById('answerInput');
+const submitAnswer=document.getElementById('submitAnswer');
+const nextButton=document.getElementById('next');
+const restartButton=document.getElementById('restartQuiz');
+function normalizeAnswer(value){
+ return value.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
+}
+function renderQuestion(){
+ const q=questions[qi];
+ attempts=0;questionLocked=false;
+ document.getElementById('count').textContent=`Question ${qi+1} of ${questions.length}`;
+ document.getElementById('score').textContent=`Correct: ${score}`;
+ document.getElementById('progressBar').style.width=`${(qi/questions.length)*100}%`;
+ document.getElementById('question').textContent=q.q;
+ document.getElementById('feedback').textContent='Take your time. Our memories are worth remembering. ❤️';
+ answerInput.value='';answerInput.disabled=false;submitAnswer.disabled=false;submitAnswer.textContent='Submit answer';
+ answerForm.style.display='flex';nextButton.style.display='none';restartButton.style.display='none';
+ answerInput.focus({preventScroll:true});
+}
+answerForm.addEventListener('submit',function(event){
+ event.preventDefault();
+ if(questionLocked)return;
+ const typed=normalizeAnswer(answerInput.value);
+ if(!typed){document.getElementById('feedback').textContent='Type an answer first 😊';return;}
+ attempts++;
+ const accepted=questions[qi].answers.map(normalizeAnswer);
+ if(accepted.includes(typed)){
+  score++;questionLocked=true;
+  document.getElementById('score').textContent=`Correct: ${score}`;
+  document.getElementById('feedback').textContent=questions[qi].good;
+  finishCurrentQuestion();
+ }else if(attempts<3){
+  const remaining=3-attempts;
+  const messages=[
+   'Not quite! Think about the clues… you have two chances left. ❤️',
+   'Almost there? Give it one more thought — this is your last chance! 😊'
+  ];
+  document.getElementById('feedback').textContent=messages[attempts-1];
+  answerInput.value='';answerInput.focus();
+ }else{
+  questionLocked=true;
+  document.getElementById('feedback').textContent=`That was a tricky one! The answer is ${questions[qi].answers[0]}. Let’s keep our memories going. 💗`;
+  finishCurrentQuestion();
+ }
+});
+function finishCurrentQuestion(){
+ answerInput.disabled=true;submitAnswer.disabled=true;
+ answerForm.style.display='none';
+ document.getElementById('progressBar').style.width=`${((qi+1)/questions.length)*100}%`;
+ nextButton.textContent=qi===questions.length-1?'See my result ✨':'Next clue →';
+ nextButton.style.display='inline-block';
+}
+nextButton.addEventListener('click',function(){
+ if(qi<questions.length-1){qi++;renderQuestion();}
+ else{showQuizResult();}
+});
+function showQuizResult(){
+ document.getElementById('count').textContent='Challenge complete';
+ document.getElementById('progressBar').style.width='100%';
+ document.getElementById('question').textContent=`You got ${score} out of ${questions.length} right!`;
+ document.getElementById('feedback').textContent=score===questions.length
+  ?'Perfect score! You remember every little detail. But my favourite memory is still every moment with you. ❤️'
+  :'Every answer brought back a memory. And that is what matters most. I’m lucky to make so many more with you. ❤️';
+ document.getElementById('score').textContent=`Final score: ${score}/${questions.length}`;
+ answerForm.style.display='none';nextButton.style.display='none';restartButton.style.display='inline-block';
+}
+restartButton.addEventListener('click',function(){qi=0;score=0;renderQuestion();});
+renderQuestion();
+function confetti(){const colors=['#f2d29a','#efaabd','#fff1df','#c8b4e5'];for(let i=0;i<65;i++){const d=document.createElement('i');d.style.cssText=`position:fixed;z-index:30;left:${Math.random()*100}vw;top:-12px;width:7px;height:11px;background:${colors[i%4]};pointer-events:none`;document.body.appendChild(d);d.animate([{transform:'translateY(0) rotate(0)',opacity:1},{transform:`translateY(${innerHeight+30}px) rotate(${Math.random()*800}deg)`,opacity:0}],{duration:1800+Math.random()*1300}).onfinish=()=>d.remove()}}
+function showModal(title,msg){document.getElementById('modalTitle').textContent=title;document.getElementById('modalText').textContent=msg;document.getElementById('modal').classList.add('open')}
+function makeWish(){document.getElementById('cake').textContent='🍰';document.getElementById('wish').textContent='May your wish find its way to you. Happy Birthday, Anjana! ❤️';confetti();setTimeout(()=>showModal('Happy Birthday, Anjana!','May every new chapter bring you joy, peace, laughter and all the love you deserve.'),500)}
+function secret(){showModal('A little secret ❤️','The best gift of my life was finding you, Anjana. I love you — today, tomorrow and in every chapter ahead.')}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body></html>
