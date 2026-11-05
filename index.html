@@ -327,19 +327,21 @@ function reveal(id){
 
 const picker=document.getElementById('photoPicker');
 
-picker.addEventListener('change',e=>{
- const files=[...e.target.files].slice(0,3);
- document.querySelectorAll('.photo').forEach((box,i)=>{
-  const old=box.querySelector('img');
-  if(old)old.remove();
-  if(files[i]){
-   const img=document.createElement('img');
-   img.alt='Selected memory';
-   img.src=URL.createObjectURL(files[i]);
-   box.appendChild(img);
-  }
+if(picker){
+ picker.addEventListener('change',e=>{
+  const files=[...e.target.files].slice(0,3);
+  document.querySelectorAll('.photo').forEach((box,i)=>{
+   const old=box.querySelector('img');
+   if(old)old.remove();
+   if(files[i]){
+    const img=document.createElement('img');
+    img.alt='Selected memory';
+    img.src=URL.createObjectURL(files[i]);
+    box.appendChild(img);
+   }
+  });
  });
-});
+}
 
 const audio=document.getElementById('song');
 const disc=document.getElementById('disc');
@@ -630,13 +632,18 @@ async function loadBirthdayWishes(){
    if(wish.timestamp){
     const parsedDate=new Date(wish.timestamp);
 
-    date.textContent=Number.isNaN(parsedDate.getTime())
-     ?''
-     :parsedDate.toLocaleDateString('en-IN',{
-       day:'numeric',
-       month:'short',
-       year:'numeric'
-      });
+    if(!Number.isNaN(parsedDate.getTime())){
+     date.textContent=parsedDate.toLocaleString('en-IN',{
+      timeZone:'Asia/Kolkata',
+      day:'numeric',
+      month:'short',
+      year:'numeric',
+      hour:'2-digit',
+      minute:'2-digit'
+     });
+    }else{
+     date.textContent=String(wish.timestamp);
+    }
    }
 
    card.append(name,message,date);
