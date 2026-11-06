@@ -123,6 +123,25 @@ section{padding:82px 0}
  cursor:wait;
 }
 
+
+/* Personal crossword game */
+.crossword-panel{max-width:820px;margin:0 auto}
+.crossword-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;width:min(100%,390px);margin:22px auto 28px}
+.cw-cell{position:relative;aspect-ratio:1;min-width:0;background:linear-gradient(145deg,#f7dfb2,#e9a9bd);border-radius:5px;overflow:hidden}
+.cw-cell input{width:100%;height:100%;border:0;background:transparent;color:#241725;text-align:center;text-transform:uppercase;font:700 clamp(.85rem,3.4vw,1.2rem) Arial,sans-serif;padding:8px 1px 1px;outline:none}
+.cw-cell input:focus{box-shadow:inset 0 0 0 3px #fff3d5}
+.cw-number{position:absolute;top:2px;left:4px;color:#4b3042;font:700 .48rem Arial,sans-serif;pointer-events:none}
+.cw-cell.solved{background:linear-gradient(145deg,#d5e7c6,#b8d4a8)}
+.cw-cell.solved input{color:#18351d}
+.cw-block{aspect-ratio:1;background:#ffffff08;border:1px solid #ffffff0a;border-radius:5px}
+.crossword-clues{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left}
+.crossword-clues h3{font:700 .75rem Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 12px}
+.crossword-clues p{font:.9rem/1.6 Arial,sans-serif;color:#eee4ec;margin:0 0 10px}
+.crossword-clues b{color:var(--rose);margin-right:7px}
+.crossword-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.crossword-status{min-height:48px;text-align:center;color:var(--gold);font:.92rem/1.6 Arial,sans-serif;margin:18px auto 0}
+@media(max-width:600px){.crossword-grid{gap:3px;width:min(100%,350px)}.crossword-clues{grid-template-columns:1fr}}
+
 @media(max-width:760px){
  .gallery,.grid3,.timeline{grid-template-columns:1fr}
  .photo{min-height:250px}
@@ -248,6 +267,150 @@ section{padding:82px 0}
     <button class="ghost" id="restartQuiz" type="button" style="display:none">Play again ↻</button>
    </div>
    <div class="quiz-note">Three chances per clue · Answers are not case-sensitive · Punctuation and extra spaces don't matter.</div>
+  </div>
+ </div>
+</section>
+
+
+<section id="personal-crossword">
+ <div class="wrap">
+  <div class="head">
+   <div class="eyebrow">A little puzzle · just for you</div>
+   <h2>Our Personal Crossword</h2>
+   <p>Five little clues about things you know and love. Fill in the squares and see if you can solve them all. ❤️</p>
+  </div>
+  <div class="panel crossword-panel">
+   <div class="crossword-grid" id="crosswordGrid" aria-label="Interactive crossword puzzle">
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="0-2"><span class="cw-number">1</span><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="0" data-c="2" aria-label="Crossword row 1, column 3"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="1-2"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="1" data-c="2" aria-label="Crossword row 2, column 3"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="2-2"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="2" data-c="2" aria-label="Crossword row 3, column 3"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="3-2"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="3" data-c="2" aria-label="Crossword row 4, column 3"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="4-2"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="4" data-c="2" aria-label="Crossword row 5, column 3"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="5-2"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="5" data-c="2" aria-label="Crossword row 6, column 3"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="5-4"><span class="cw-number">2</span><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="5" data-c="4" aria-label="Crossword row 6, column 5"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="5-9"><span class="cw-number">3</span><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="5" data-c="9" aria-label="Crossword row 6, column 10"></div>
+    <div class="cw-cell" data-cell="6-0"><span class="cw-number">4</span><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="6" data-c="0" aria-label="Crossword row 7, column 1"></div>
+    <div class="cw-cell" data-cell="6-1"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="6" data-c="1" aria-label="Crossword row 7, column 2"></div>
+    <div class="cw-cell" data-cell="6-2"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="6" data-c="2" aria-label="Crossword row 7, column 3"></div>
+    <div class="cw-cell" data-cell="6-3"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="6" data-c="3" aria-label="Crossword row 7, column 4"></div>
+    <div class="cw-cell" data-cell="6-4"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="6" data-c="4" aria-label="Crossword row 7, column 5"></div>
+    <div class="cw-cell" data-cell="6-5"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="6" data-c="5" aria-label="Crossword row 7, column 6"></div>
+    <div class="cw-cell" data-cell="6-6"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="6" data-c="6" aria-label="Crossword row 7, column 7"></div>
+    <div class="cw-cell" data-cell="6-7"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="6" data-c="7" aria-label="Crossword row 7, column 8"></div>
+    <div class="cw-cell" data-cell="6-8"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="6" data-c="8" aria-label="Crossword row 7, column 9"></div>
+    <div class="cw-cell" data-cell="6-9"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="6" data-c="9" aria-label="Crossword row 7, column 10"></div>
+    <div class="cw-cell" data-cell="7-0"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="7" data-c="0" aria-label="Crossword row 8, column 1"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="7-2"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="7" data-c="2" aria-label="Crossword row 8, column 3"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="7-4"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="7" data-c="4" aria-label="Crossword row 8, column 5"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="7-9"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="7" data-c="9" aria-label="Crossword row 8, column 10"></div>
+    <div class="cw-cell" data-cell="8-0"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="8" data-c="0" aria-label="Crossword row 9, column 1"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="8-9"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="8" data-c="9" aria-label="Crossword row 9, column 10"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="9-9"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="9" data-c="9" aria-label="Crossword row 10, column 10"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-block" aria-hidden="true"></div>
+    <div class="cw-cell" data-cell="10-9"><input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" inputmode="text" data-r="10" data-c="9" aria-label="Crossword row 11, column 10"></div>
+  </div>
+  <div class="crossword-clues">
+   <div>
+    <h3>Across</h3>
+    <p><b>4.</b> Your favourite Katcheri.</p>
+   </div>
+   <div>
+    <h3>Down</h3>
+    <p><b>1.</b> A cold treat that brings a smile to your face.</p>
+    <p><b>2.</b> Three letters associated with your career.</p>
+    <p><b>3.</b> The city you liked.</p>
+    <p><b>4.</b> Party, party!</p>
+   </div>
+  </div>
+  <div class="crossword-actions">
+   <button class="btn" id="checkCrossword" type="button">Check answers</button>
+   <button class="ghost" id="revealCrossword" type="button">Reveal a letter</button>
+   <button class="ghost" id="resetCrossword" type="button">Start again ↻</button>
+  </div>
+  <div class="crossword-status" id="crosswordStatus" aria-live="polite">Tap a square to enter a letter. The words cross each other!</div>
   </div>
  </div>
 </section>
@@ -523,6 +686,72 @@ restartButton.addEventListener('click',function(){
 });
 
 renderQuestion();
+
+
+// Personal crossword game
+const crosswordEntries=[
+ {word:'ICECREAM',cells:[[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2]]},
+ {word:'SAP',cells:[[5,4],[6,4],[7,4]]},
+ {word:'MYSORE',cells:[[5,9],[6,9],[7,9],[8,9],[9,9],[10,9]]},
+ {word:'THALAPATHY',cells:[[6,0],[6,1],[6,2],[6,3],[6,4],[6,5],[6,6],[6,7],[6,8],[6,9]]},
+ {word:'TVK',cells:[[6,0],[7,0],[8,0]]}
+];
+const crosswordGrid=document.getElementById('crosswordGrid');
+const crosswordStatus=document.getElementById('crosswordStatus');
+function crosswordInput(r,c){return crosswordGrid.querySelector(`input[data-r="${r}"][data-c="${c}"]`)}
+crosswordGrid.querySelectorAll('input').forEach(input=>{
+ input.addEventListener('input',()=>{
+  input.value=input.value.replace(/[^a-z]/gi,'').slice(-1).toUpperCase();
+  input.parentElement.classList.remove('solved');
+  if(input.value){
+   const all=[...crosswordGrid.querySelectorAll('input')];
+   const index=all.indexOf(input);
+   if(all[index+1])all[index+1].focus();
+  }
+ });
+ input.addEventListener('keydown',event=>{
+  const r=Number(input.dataset.r),c=Number(input.dataset.c);
+  const moves={ArrowUp:[r-1,c],ArrowDown:[r+1,c],ArrowLeft:[r,c-1],ArrowRight:[r,c+1]};
+  if(moves[event.key]){
+   const [nr,nc]=moves[event.key],target=crosswordInput(nr,nc);
+   if(target){event.preventDefault();target.focus();}
+  }
+ });
+});
+function checkCrossword(){
+ let solved=0;
+ crosswordEntries.forEach(entry=>{
+  const correct=entry.cells.every(([r,c],i)=>crosswordInput(r,c).value===entry.word[i]);
+  if(correct){
+   solved++;
+   entry.cells.forEach(([r,c])=>crosswordInput(r,c).parentElement.classList.add('solved'));
+  }
+ });
+ if(solved===crosswordEntries.length){
+  crosswordStatus.textContent='You solved all five clues! Every answer was spot on. ❤️';
+  confetti();
+  showModal('Crossword completed! 🎉','You know all these little details so well. Your biggest prize is already yours — all my love. ❤️');
+ }else{
+  crosswordStatus.textContent=`${solved} of 5 words correct. Keep going — you're getting closer! ❤️`;
+ }
+}
+document.getElementById('checkCrossword').addEventListener('click',checkCrossword);
+document.getElementById('revealCrossword').addEventListener('click',()=>{
+ for(const entry of crosswordEntries){
+  const missing=entry.cells.find(([r,c],i)=>crosswordInput(r,c).value!==entry.word[i]);
+  if(missing){
+   const [r,c]=missing;crosswordInput(r,c).value=entry.word[entry.cells.findIndex(([rr,cc])=>rr===r&&cc===c)];
+   crosswordInput(r,c).parentElement.classList.add('solved');
+   crosswordStatus.textContent='A little hint revealed! Keep solving. ✨';
+   return;
+  }
+ }
+ checkCrossword();
+});
+document.getElementById('resetCrossword').addEventListener('click',()=>{
+ crosswordGrid.querySelectorAll('input').forEach(input=>{input.value='';input.parentElement.classList.remove('solved');});
+ crosswordStatus.textContent='Puzzle reset. Ready for another try? ❤️';
+});
 
 function confetti(){
  const colors=['#f2d29a','#efaabd','#fff1df','#c8b4e5'];
