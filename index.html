@@ -81,7 +81,7 @@ section{padding:82px 0}
 .modalbox h2{font-size:2.2rem;font-weight:400;color:var(--gold)}
 .modalbox p{font:1rem/1.7 Arial,sans-serif;color:#e8dce9}
 
-/* Birthday Wishes */
+/* Chapter Six: live birthday wishes */
 .wishes-list{
  display:grid;
  grid-template-columns:repeat(2,minmax(0,1fr));
@@ -153,6 +153,17 @@ section{padding:82px 0}
 @media(prefers-reduced-motion:reduce){
  *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
 }
+
+/* Birthday sliding-letter puzzle */
+.sliding-panel{max-width:560px;margin:0 auto;text-align:center}
+.sliding-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;width:min(100%,390px);margin:24px auto;padding:10px;border:5px solid #9a6846;border-radius:15px;background:linear-gradient(135deg,#5d3c30,#2e2020);box-shadow:0 12px 28px #0005}
+.slide-tile{aspect-ratio:1;border:1px solid #f8d8a5;border-radius:8px;background:linear-gradient(145deg,#ffe4b5,#d99a68);color:#38251f;font:800 clamp(1.15rem,6vw,2rem) Georgia,serif;box-shadow:inset 0 2px 3px #fff8,0 3px 5px #0005;cursor:pointer;display:grid;place-items:center;user-select:none}
+.slide-tile:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.slide-tile.empty{background:#211918;border:1px dashed #b88c69;box-shadow:inset 0 2px 8px #0008;cursor:default}
+.sliding-meta{color:var(--gold);font:.9rem Arial,sans-serif;margin:12px 0}
+.sliding-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.sliding-help{color:#eee4ec;font:.9rem/1.6 Arial,sans-serif;max-width:440px;margin:0 auto}
+
 </style>
 </head>
 
@@ -173,9 +184,9 @@ section{padding:82px 0}
 <section id="memories">
  <div class="wrap">
   <div class="head">
-   <div class="eyebrow">Enjoy the moment</div>
-   <h2>Just For You</h2>
-   <p>May your heart be light, your smile be bright, and your year be unforgettable</p>
+   <div class="eyebrow">Chapter one · the memories</div>
+   <h2>Our little moments</h2>
+   <p>Add your favourite photographs here. These can be wedding memories, silly selfies, family moments or places you've explored together.</p>
   </div>
   <div class="gallery">
    <div class="photo"><span>Our favourite photo 01</span><img src="assets/photo-1.jpg" alt="Our memory 1" onerror="this.remove()"></div>
@@ -194,7 +205,7 @@ section{padding:82px 0}
 <section>
  <div class="wrap">
   <div class="head">
-   <div class="eyebrow">A song for you </div>
+   <div class="eyebrow">A song for you · chapter two</div>
    <h2>Press play, think of us</h2>
    <p>Add a song that means something to both of you. Music starts only when you press play.</p>
   </div>
@@ -210,7 +221,7 @@ section{padding:82px 0}
 <section>
  <div class="wrap">
   <div class="head">
-   <div class="eyebrow">Just Feel it</div>
+   <div class="eyebrow">Chapter three · little surprises</div>
    <h2>Three things I want you to remember</h2>
    <p>Tap to reveal. Keep these close, today and always.</p>
   </div>
@@ -234,9 +245,9 @@ section{padding:82px 0}
 <section>
  <div class="wrap">
   <div class="head">
-   <div class="eyebrow">Moments That Matter</div>
+   <div class="eyebrow">Chapter four · the story so far</div>
    <h2>Little chapters, endless love</h2>
-   <p>A Beautiful Beginning</p>
+   <p>You can personalise these captions with dates or milestones that mean something to you both.</p>
   </div>
   <div class="panel timeline">
    <div class="moment"><b>Where it began</b><p>One meeting, one hello, and a story that became ours.</p></div>
@@ -249,7 +260,7 @@ section{padding:82px 0}
 <section id="memory-challenge">
  <div class="wrap">
   <div class="head">
-   <div class="eyebrow">Forever, In Every Frame</div>
+   <div class="eyebrow">Chapter five · our little challenge</div>
    <h2>How well do you remember?</h2>
    <p>Seven clues from stories we know. Type the title you think I'm looking for. You get three chances for every question!</p>
   </div>
@@ -285,7 +296,7 @@ section{padding:82px 0}
     <div>
      <h3>Across</h3>
      <p><b>4.</b> Your favourite Katcheri.</p>
-     <p><b>5.</b> The best person in your life is________. And add three letters before his name to get your favourite singer.</p>
+     <p><b>5.</b> The best person in your life is Sriram. Add three letters before his name to get your favourite singer.</p>
     </div>
     <div>
      <h3>Down</h3>
@@ -302,6 +313,27 @@ section{padding:82px 0}
     <button class="ghost" id="resetCrossword" type="button">Start again ↻</button>
    </div>
    <div class="crossword-status" id="crosswordStatus" aria-live="polite">Tap a square to enter a letter. The words cross each other!</div>
+  </div>
+ </div>
+</section>
+
+
+<section id="birthday-slider">
+ <div class="wrap">
+  <div class="head">
+   <div class="eyebrow">One little challenge · lots of love</div>
+   <h2>Stay Happy, Anjana</h2>
+   <p>Slide the letters into the right order to reveal your birthday wish. ❤️</p>
+  </div>
+  <div class="panel sliding-panel">
+   <p class="sliding-help">Tap a letter next to the empty space to move it. Arrange the letters to read <strong>STAY HAPPY ANJANA</strong>.</p>
+   <div class="sliding-meta">Moves: <strong id="slideMoves">0</strong></div>
+   <div class="sliding-board" id="slidingBoard" role="group" aria-label="Sliding letter puzzle"></div>
+   <div class="sliding-actions">
+    <button class="btn" id="shuffleSlider" type="button">Shuffle puzzle ↻</button>
+    <button class="ghost" id="resetSlider" type="button">Start again</button>
+   </div>
+   <div class="crossword-status" id="sliderStatus" aria-live="polite">A little birthday puzzle, made just for you. ✨</div>
   </div>
  </div>
 </section>
@@ -326,7 +358,7 @@ section{padding:82px 0}
 <section>
  <div class="wrap">
   <div class="head">
-   <div class="eyebrow">Make a wish</div>
+   <div class="eyebrow">The final chapter · make a wish</div>
    <h2>One wish, just for you</h2>
    <p>Take a breath, make a wish, and tap when you're ready.</p>
   </div>
@@ -342,7 +374,7 @@ section{padding:82px 0}
 <section id="birthday-wishes">
  <div class="wrap">
   <div class="head">
-   <div class="eyebrow">Messages from loved ones</div>
+   <div class="eyebrow">Chapter six · messages from loved ones</div>
    <h2>Birthday wishes for you</h2>
    <p>A few beautiful words from the people who make life special.</p>
   </div>
@@ -424,7 +456,7 @@ audio.addEventListener('ended',()=>{
 // Text-answer memory challenge
 const questions=[
  {
-  q:'An army officer,on vacation with a mission that keeps everyone guessing. I’m waiting for your answer!” What  am I thinking of?',
+  q:'An army officer, a city hiding a sleeper-cell network, and a mission that keeps everyone guessing. And then comes the line: “I’m waiting for your answer!” What title am I thinking of?',
   answers:['Thuppakki','Thupakki','Thuppaki'],
   good:'Correct! You remembered that one. ❤️'
  },
@@ -687,6 +719,61 @@ document.getElementById('resetCrossword').addEventListener('click',()=>{
  crosswordGrid.querySelectorAll('input').forEach(input=>{input.value='';input.parentElement.classList.remove('solved');});
  crosswordStatus.textContent='Puzzle reset. Ready for another try? ❤️';
 });
+
+
+// Sliding birthday-letter puzzle: STAY HAPPY ANJANA (15 tiles + one empty space)
+(function(){
+ const goal='STAYHAPPYANJANA'.split('');
+ const boardEl=document.getElementById('slidingBoard');
+ const movesEl=document.getElementById('slideMoves');
+ const statusEl=document.getElementById('sliderStatus');
+ if(!boardEl)return;
+ let tiles=goal.concat(''),moves=0,finished=false;
+ function neighbors(index){
+  const r=Math.floor(index/4),c=index%4,out=[];
+  if(r>0)out.push(index-4);if(r<3)out.push(index+4);
+  if(c>0)out.push(index-1);if(c<3)out.push(index+1);
+  return out;
+ }
+ function render(){
+  boardEl.innerHTML='';
+  tiles.forEach((letter,index)=>{
+   const tile=document.createElement('button');tile.type='button';
+   tile.className='slide-tile'+(letter===''?' empty':'');tile.textContent=letter;
+   tile.setAttribute('aria-label',letter?`Letter ${letter}, position ${index+1}`:'Empty space');
+   tile.disabled=!letter||finished;tile.addEventListener('click',()=>moveTile(index));
+   boardEl.appendChild(tile);
+  });
+  movesEl.textContent=moves;
+ }
+ function moveTile(index){
+  const empty=tiles.indexOf('');
+  if(finished||!tiles[index]||!neighbors(empty).includes(index))return;
+  [tiles[index],tiles[empty]]=[tiles[empty],tiles[index]];moves++;render();checkWin();
+ }
+ function checkWin(){
+  if(tiles.slice(0,15).every((v,i)=>v===goal[i])&&tiles[15]===''){
+   finished=true;render();statusEl.textContent='You did it! STAY HAPPY ANJANA ❤️';
+   if(typeof confetti==='function')confetti();
+   if(typeof showModal==='function')showModal('Puzzle completed! 🎉','STAY HAPPY ANJANA — keep smiling, my favourite person. ❤️');
+  }
+ }
+ function shuffle(){
+  tiles=goal.concat('');let empty=15,previous=-1;
+  for(let i=0;i<250;i++){
+   const choices=neighbors(empty).filter(n=>n!==previous);
+   const next=choices[Math.floor(Math.random()*choices.length)];
+   [tiles[empty],tiles[next]]=[tiles[next],tiles[empty]];previous=empty;empty=next;
+  }
+  moves=0;finished=false;statusEl.textContent='Puzzle shuffled. Can you put the birthday wish back together? ❤️';render();
+ }
+ document.getElementById('shuffleSlider').addEventListener('click',shuffle);
+ document.getElementById('resetSlider').addEventListener('click',()=>{
+  tiles=goal.concat('');moves=0;finished=false;
+  statusEl.textContent='Back to the completed message. Shuffle when you are ready!';render();
+ });
+ shuffle();
+})();
 
 function confetti(){
  const colors=['#f2d29a','#efaabd','#fff1df','#c8b4e5'];
